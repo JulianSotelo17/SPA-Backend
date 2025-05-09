@@ -1,5 +1,5 @@
-import { Request, Response } from 'express';
-import * as userModel from '../models/user.model';
+import type { Request, Response } from 'express';
+import * as userModel from '../models/user.model.js';
 
 // Interfaz para extender Request y agregar el usuario
 interface AuthRequest extends Request {

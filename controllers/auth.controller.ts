@@ -1,5 +1,5 @@
-import { Request, Response } from 'express';
-import * as userModel from '../models/user.model';
+import type { Request, Response } from 'express';
+import * as userModel from '../models/user.model.js';
 
 // Controlador para login
 export const login = (req: Request, res: Response): void => {

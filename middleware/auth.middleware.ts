@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction } from 'express';
+import type { Request, Response, NextFunction } from 'express';
 
 // Interfaz para extender Request y agregar el usuario
 interface AuthRequest extends Request {
@@ -10,7 +10,7 @@ interface AuthRequest extends Request {
 
 // Middleware de autenticación simulado
 // En una aplicación real, verificaríamos y decodificaríamos el token JWT
-export const verifyToken = (req: AuthRequest, res: Response, next: NextFunction): void => {
+const verifyToken = (req: AuthRequest, res: Response, next: NextFunction): void => {
   // Obtener el token del header de autorización
   const authHeader = req.headers.authorization;
   
@@ -49,7 +49,7 @@ export const verifyToken = (req: AuthRequest, res: Response, next: NextFunction)
 };
 
 // Middleware para verificar si el usuario es administrador
-export const isAdmin = (req: AuthRequest, res: Response, next: NextFunction): void => {
+const isAdmin = (req: AuthRequest, res: Response, next: NextFunction): void => {
   // Asumimos que el middleware verifyToken ya ha establecido req.user
   if (req.user && req.user.role === 'admin') {
     next();
@@ -61,7 +61,7 @@ export const isAdmin = (req: AuthRequest, res: Response, next: NextFunction): vo
   }
 };
 
-export default {
+export {
   verifyToken,
   isAdmin
 };

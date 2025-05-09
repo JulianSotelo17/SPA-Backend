@@ -1,9 +1,10 @@
-import express, { Request, Response, NextFunction } from 'express';
+import express from 'express';
+import type { Request, Response, NextFunction } from 'express';
 import cors from 'cors';
-import config from './config/config';
+import config from './config/config.js';
 // Importar rutas
-import authRoutes from './routes/auth.route';
-import userRoutes from './routes/user.route';
+import authRoutes from './routes/auth.route.js';
+import userRoutes from './routes/user.route.js';
 
 const app = express();
 const port = config.PORT;
