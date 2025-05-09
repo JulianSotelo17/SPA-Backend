@@ -23,7 +23,8 @@ export interface CreateUserData {
 
 // Simulación de una base de datos de usuarios en memoria
 const users: User[] = [
-  { id: 1, email: 'usuario@test.com', password: '123456', name: 'Usuario Demo', role: 'client' }
+  { id: 1, email: 'usuario@test.com', password: '123456', name: 'Usuario Demo', role: 'client' },
+  { id: 2, email: 'user@ejemplo.com', password: '1234', name: 'Usuario Ejemplo', role: 'client' }
 ];
 
 // Función para encontrar un usuario por email y password
